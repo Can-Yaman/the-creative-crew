@@ -1,5 +1,8 @@
+html {
+  font-size: 16px;
+}
+
 body {
-  font-size: 10px;
   background-image: url("https://picsum.photos/id/231/600/400");
   background-size: cover;
   display: -webkit-box;
@@ -48,7 +51,7 @@ body {
 
 .container__intro > h1 {
   width: 25rem;
-  font-size: 3rem;
+  font-size: 3.3rem;
   font-family: 'Times New Roman';
   -ms-grid-column-align: left;
       justify-self: left;
@@ -72,7 +75,7 @@ body {
 }
 
 .container__intro--explanation > h3 {
-  font-size: 2rem;
+  font-size: 2.1rem;
 }
 
 .container__intro--explanation > p {
@@ -88,11 +91,37 @@ body {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   width: 100%;
+  height: 150vh;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
 
+.container__pictures div:nth-child(1) {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.container__pictures div:nth-child(3) {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.container__pictures div:nth-child(4) {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.container__pictures div:nth-child(6) {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
 .container__pictures div:nth-child(2) {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.container__pictures div:nth-child(5) {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
@@ -143,15 +172,35 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-@media screen and (min-width: 700px) {
-  body {
-    font-size: 5px;
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 10px;
+  }
+  .container__intro {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .container__pictures {
+    height: 100vh;
+  }
+  .container__pictures > div:nth-child(odd) {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .container__pictures > div:nth-child(even) {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 }
 
-@media screen and (min-width: 400px) {
-  body {
-    font-size: 1px;
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 5px;
   }
 }
 /*# sourceMappingURL=style.css.map */
