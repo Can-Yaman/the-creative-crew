@@ -1,0 +1,72 @@
+    @import "globals";
+    @import "mixins";
+    @import "reset";
+    .container {
+        @include centerize;
+        flex-flow: column wrap;
+        width: 80%;
+        height: auto;
+        background-color: $mainBackColor;
+        &__intro {
+            width: 100%;
+            // @include centerize;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-content: space-between;
+            &>h1 {
+                width: 40%;
+                font-size: $fontSizeBig;
+                font-family: 'Times New Roman';
+                flex-shrink: 0;
+            }
+            &--explanation {
+                display: flex;
+                flex-flow: column nowrap;
+                width: 50%;
+                justify-content: stretch;
+                align-content: space-between;
+                font-family: sans-serif;
+                flex-shrink: 0;
+                &>h3 {
+                    font-size: $fontSizeMiddle;
+                }
+                &>p {
+                    font-size: $fontSizeSmall;
+                }
+            }
+        }
+        &__pictures {
+            display: flex;
+            flex-flow: row wrap;
+            width: 100%;
+            justify-content: space-around;
+            // align-items: stretch;
+            div:nth-child(2) {
+                align-self: flex-end;
+            }
+            &--members {
+                @include centerize;
+                @include boxSize;
+                flex-flow: row wrap;
+                padding: 2rem 1rem;
+                font-size: $fontSizeSmall;
+                justify-content: left;
+                &>img {
+                    @include picSize;
+                }
+                &>.duty {
+                    writing-mode: vertical-rl;
+                    align-self: flex-start;
+                    margin: 0 0 0 0.5rem;
+                    padding: 0;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                }
+                &>.name {
+                    align-self: flex-start;
+                    font-weight: 900;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+            }
+        }
+    }

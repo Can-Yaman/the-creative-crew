@@ -1,0 +1,15 @@
+@mixin centerize {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin picSize {
+    width: 16rem;
+    height: 21rem;
+}
+
+@mixin boxSize {
+    width: 20rem;
+    height: 23rem;
+}

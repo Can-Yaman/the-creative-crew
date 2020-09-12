@@ -1,0 +1,6 @@
+body {
+    font-size: $rootFontSizeBig;
+    background-image: url("https://picsum.photos/id/231/600/400");
+    background-size: cover;
+    @include centerize;
+}
