@@ -1,72 +1,89 @@
-    @import "globals";
-    @import "mixins";
-    @import "reset";
-    .container {
-        @include centerize;
-        flex-flow: column wrap;
-        width: 80%;
-        height: auto;
-        background-color: $mainBackColor;
-        &__intro {
-            width: 100%;
-            // @include centerize;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            align-content: space-between;
-            &>h1 {
-                width: 40%;
-                font-size: $fontSizeBig;
-                font-family: 'Times New Roman';
-                flex-shrink: 0;
-            }
-            &--explanation {
-                display: flex;
-                flex-flow: column nowrap;
-                width: 50%;
-                justify-content: stretch;
-                align-content: space-between;
-                font-family: sans-serif;
-                flex-shrink: 0;
-                &>h3 {
-                    font-size: $fontSizeMiddle;
-                }
-                &>p {
-                    font-size: $fontSizeSmall;
-                }
-            }
+@import "globals";
+@import "mixins";
+body {
+    font-size: $rootFontSizeBig;
+    background-image: url("https://picsum.photos/id/231/600/400");
+    background-size: cover;
+    @include centerize;
+}
+
+.container {
+    @include centerize;
+    flex-flow: column wrap;
+    width: 80%;
+    height: auto;
+    background-color: $mainBackColor;
+    &__intro {
+        width: 100%;
+        // @include centerize;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-content: space-between;
+        &>h1 {
+            width: 25rem;
+            font-size: $fontSizeBig;
+            font-family: 'Times New Roman';
+            justify-self: left;
         }
-        &__pictures {
+        &--explanation {
             display: flex;
-            flex-flow: row wrap;
-            width: 100%;
-            justify-content: space-around;
-            // align-items: stretch;
-            div:nth-child(2) {
-                align-self: flex-end;
+            flex-flow: column nowrap;
+            width: 30rem;
+            justify-content: stretch;
+            align-content: space-between;
+            font-family: sans-serif;
+            &>h3 {
+                font-size: $fontSizeMiddle;
             }
-            &--members {
-                @include centerize;
-                @include boxSize;
-                flex-flow: row wrap;
-                padding: 2rem 1rem;
+            &>p {
                 font-size: $fontSizeSmall;
-                justify-content: left;
-                &>img {
-                    @include picSize;
-                }
-                &>.duty {
-                    writing-mode: vertical-rl;
-                    align-self: flex-start;
-                    margin: 0 0 0 0.5rem;
-                    padding: 0;
-                    font-family: Georgia, 'Times New Roman', Times, serif;
-                }
-                &>.name {
-                    align-self: flex-start;
-                    font-weight: 900;
-                    font-family: Verdana, Geneva, Tahoma, sans-serif;
-                }
             }
         }
     }
+    &__pictures {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        justify-content: space-around;
+        // align-items: stretch;
+        div:nth-child(2) {
+            align-self: flex-end;
+        }
+        &--members {
+            @include centerize;
+            @include boxSize;
+            flex-flow: row wrap;
+            padding: 2rem 1rem;
+            font-size: $fontSizeSmall;
+            justify-content: left;
+            &>img {
+                @include picSize;
+            }
+            &>.duty {
+                writing-mode: vertical-rl;
+                align-self: flex-start;
+                margin: 0 0 0 0.5rem;
+                padding: 0;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            &>.name {
+                align-self: flex-start;
+                font-weight: 900;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    body {
+        font-size: $rootFontSizeMid;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    body {
+        font-size: $rootFontSizeSmall;
+    }
+}
